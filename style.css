@@ -1,47 +1,101 @@
+:root {
+    --bg: #f4f6f9;
+    --text: #333;
+    --card-bg: #ffffff;
+    --button-bg: #4a6fa5;
+    --button-hover: #3a5a8c;
+    --border: #ddd;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg: #1a1a1a;
+    --text: #f1f1f1;
+    --card-bg: #2d2d2d;
+    --button-bg: #3a5a8c;
+    --button-hover: #4a6fa5;
+    --border: #555;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: var(--transition);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    padding: 50px;
-    margin: 0;
 }
 
 h1 {
-    color: #4a6fa5;
+    color: var(--button-bg);
+    margin-bottom: 30px;
+    font-size: 2.2em;
 }
 
-p {
-    color: #666;
-    font-size: 18px;
+.info-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
 button {
-    background-color: #4a6fa5;
+    background-color: var(--button-bg);
     color: white;
     border: none;
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 10px;
+    transition: var(--transition);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #3a5a8c;
+    background-color: var(--button-hover);
+    transform: scale(1.05);
 }
 
 #user-info {
-    margin-top: 30px;
+    margin: 20px auto;
     padding: 15px;
     font-family: 'Courier New', monospace;
     font-size: 14px;
-    color: #2c3e50;
-    background-color: #ecf0f1;
-    display: inline-block;
-    border-radius: 6px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     max-width: 500px;
     word-break: break-all;
     opacity: 0;
     transition: opacity 0.5s ease;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+#copy-btn {
+    display: none !important;
 }
