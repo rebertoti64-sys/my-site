@@ -89,3 +89,16 @@ copyBtn.addEventListener('click', () => {
         alert('Ошибка копирования: ' + err);
     });
 });
+// === Генерация QR-кода ===
+const qrcodeContainer = document.getElementById('qrcode');
+if (qrcodeContainer) {
+    const siteUrl = window.location.href; // Текущий URL: https://rebertoti64-sys.github.io/my-site
+    new QRCode(qrcodeContainer, {
+        text: siteUrl,
+        width: 180,
+        height: 180,
+        colorDark: "#4a6fa5",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H // Высокая надёжность
+    });
+}

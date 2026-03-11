@@ -99,3 +99,16 @@ button:hover {
 #copy-btn {
     display: none !important;
 }
+#qrcode {
+    width: 180px;
+    height: 180px;
+    margin: 15px auto;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#qrcode canvas {
+    border-radius: 8px;
+}
